@@ -15,7 +15,7 @@ DOCKER_INSTALL() {
     if [[ ${docker_compose_exists} == "" ]]; then
         OUT_ALERT "[?] 正在安装docker-compose"
 
-        curl -L --fail https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+        curl -L --fail https://ghproxy.com/https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
         chmod +x /usr/local/bin/docker-compose && \
 	    ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     fi
@@ -33,11 +33,11 @@ DOCKER_UP() {
 	docker rmi radish
 
     if [ ! -f "/radish/Dockerfile" ]; then
-        wget https://raw.githubusercontent.com/lu0b0/ELM/main/JD/Dockerfile -O /radish/Dockerfile
+        wget https://ghproxy.com/https://raw.githubusercontent.com/lu0b0/ELM/main/JD/Dockerfile -O /radish/Dockerfile
     fi
     
     
-    wget https://github.com/lu0b0/ELM/releases/download/3.0/radish -O /radish/radish
+    wget https://ghproxy.com/https://github.com/lu0b0/ELM/releases/download/3.0/radish -O /radish/radish
     
     chmod -R 777 /radish
 	
